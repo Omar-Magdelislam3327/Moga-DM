@@ -1,53 +1,929 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Lenis Scroll Test</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      background: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-    }
-    section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-    }
-    section:nth-child(even) {
-      background: #333;
-    }
-  </style>
-</head>
-<body>
-  <section>Section 1</section>
-  <section>Section 2</section>
-  <section>Section 3</section>
-  <section>Section 4</section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mogasoft</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <style>
+      body {
+        background-color: black;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
 
-  <!-- مكتبة لينيس -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+      h1::selection,
+      h2::selection,
+      h3::selection,
+      h4::selection,
+      h5::selection,
+      h6::selection,
+      p::selection,
+      label::selection,
+      span::selection {
+        background-color: #bf0fc6;
+        color: white;
+      }
 
-  <!-- الكود -->
-  <script>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #bf0fc6;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: black;
+      }
+
+      .hero {
+  background: url("imgs/marketing.png") center/cover no-repeat;
+  height: 100vh;
+  position: relative;
+  border-radius: 0px 0px 200px 200px;
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.custom-navbar {
+  background-color: #000;
+  border-radius: 50px;
+  padding: 10px 30px;
+  width: fit-content;
+  margin-top: 20px;
+  font-size: 1rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 10;
+  a {
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  a:hover {
+    color: #bf0fc6 !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .custom-navbar {
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 50px;
+  }
+
+  .custom-navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 0 40px !important;
+  }
+
+  .custom-navbar li {
+    list-style: none;
+  }
+
+  .custom-navbar .logo-center {
+    order: 3;
+    margin: 0 2rem;
+  }
+
+  .custom-navbar ul .nav-item:nth-child(1) { order: 1; }
+  .custom-navbar ul .nav-item:nth-child(2) { order: 2; }
+  .custom-navbar ul .nav-item:nth-child(4) { order: 4; }
+  .custom-navbar ul .nav-item:nth-child(5) { order: 5; }
+}
+
+
+@media (max-width: 768px) {
+  .custom-navbar {
+    border-radius: 50px;
+    padding: 10px 50px;
+    transition: width 0.3s;
+  }
+  .custom-navbar ul {
+    flex-direction: column;
+  }
+  .custom-navbar ul .nav-item:not(.logo-center) {
+    display: none;
+  }
+
+  .custom-navbar.expanded {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .custom-navbar.expanded ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .custom-navbar.expanded ul .nav-item {
+    display: block;
+  }
+}
+
+      .stats-section .container {
+        position: relative;
+        background-color: #22222275;
+        border: 2px solid #2b2b2b;
+        color: white;
+        border-radius: 50px;
+        .plus {
+          color: #bf0fc6;
+        }
+        /* .shadow {
+          background: #bf0fc6;
+          position: absolute;
+          top: -182px;
+          left: -200px;
+          width: 404.031px;
+          height: 404.031px;
+          border-radius: 304.031px;
+          opacity: 0.15000000596046448;
+          filter: blur(60px);
+        } */
+      }
+      .ideas-section {
+        h2 {
+          font-size: 40px;
+          color: white;
+        }
+        img {
+          border-radius: 50px;
+          filter: grayscale(100%);
+          animation: infiniteMove 5s infinite;
+          transition: all 0.3s;
+        }
+        img:hover {
+          /* border-radius: 50px; */
+          filter: grayscale(0);
+          /* animation: infiniteMove 5s infinite; */
+        }
+      }
+      @keyframes infiniteMove {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .clients-section img {
+        max-height: 100px;
+        object-fit: cover;
+        transition: 0.3s;
+      }
+      .clients-section img:hover {
+        transform: scale(1.1);
+      }
+      .services-section {
+        background-color: #222222ab;
+        border: 2px solid #2b2b2b !important;
+        border-radius: 50px;
+        padding: 50px;
+        color: white;
+      }
+
+      .section-title {
+        position: relative;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: white;
+      }
+      .whatWeDo {
+        position: absolute;
+        left: -45px;
+        /* top: 0; */
+        background: #bf0fc6;
+        padding: 5px;
+        width: auto;
+        transform: rotate(270deg);
+      }
+      .section-title .highlight {
+        position: relative;
+        color: white;
+        padding: 2px 10px;
+        z-index: 0;
+      }
+      .section-title .highlight .overlay-bg {
+        position: absolute;
+        inset: 0;
+        background: #bf0fc6;
+        border-radius: 12px;
+        z-index: -50;
+        transform: skewX(-15deg);
+      }
+
+      .service-list {
+        margin-top: 30px;
+      }
+
+      .service-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #1c1c1c;
+        font-weight: 700;
+        border: 2px solid #2b2b2b !important;
+        border-radius: 50px;
+        padding: 15px 20px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .service-item .number {
+        color: #bf0fc6;
+        font-weight: bold;
+        font-size: 1.8rem;
+      }
+
+      .service-item .arrow {
+        color: white;
+        font-size: 1.5rem;
+      }
+
+      .service-item.active,
+      .service-item:hover {
+        background: black;
+      }
+
+      .image-box img {
+        margin-top: 20px;
+        max-height: 350px;
+        object-fit: cover;
+        border-radius: 24px;
+      }
+
+      .services-section .card {
+        background: transparent !important;
+        border: 2px solid #2a2a2a;
+        border-radius: 30px;
+        padding: 10px;
+        text-align: start !important;
+      }
+      .services-section .card-special {
+        background-color: #bf0fc6 !important;
+        border: none;
+
+        .btn-arrow {
+          background-color: white !important;
+          color: #3a3939 !important;
+        }
+      }
+      .btn-arrow {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #3a3939 !important;
+        color: white !important;
+        border-radius: 100%;
+        font-size: 30px;
+        transition: 0.3s;
+        i {
+          transition: 0.3s;
+        }
+      }
+
+      .btn-arrow:hover {
+        background-color: #bf0fc6 !important;
+        i {
+          transform: translate(2px, -4px);
+        }
+      }
+      .text-section {
+        position: relative;
+        h2 {
+          font-family: "Phonk", sans-serif;
+          font-weight: 900;
+          font-size: 3.5rem;
+          color: white;
+        }
+        /* .shadow {
+          background: #bf0fc6;
+          position: absolute;
+          top: -182px;
+          right: -150px;
+          width: 404.031px;
+          height: 404.031px;
+          border-radius: 304.031px;
+          opacity: 0.15000000596046448;
+          filter: blur(60px);
+        } */
+      }
+
+      .form-control {
+        background-color: transparent !important;
+        border: 2px solid #2b2b2b;
+        border-radius: 16px;
+        padding: 12px 18px;
+        color: white !important;
+      }
+      .form-control::placeholder {
+        color: white !important;
+      }
+      .form-control:focus {
+        /* background: ; */
+        border-color: #bf0fc6;
+        box-shadow: none;
+      }
+      .btn-submit {
+        background-color: #bf0fc6;
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+        color: white;
+        border: none;
+        border-radius: 999999999px;
+        padding: 12px 20px;
+        width: 100%;
+        font-size: 20px;
+        transition: 0.3s ease;
+      }
+
+      .btn-submit:hover {
+        background-color: #901694;
+      }
+
+      .btn-submit:disabled {
+        background-color: black;
+        cursor: not-allowed;
+      }
+      footer {
+        background-color: #2a2a2a;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        a {
+          color: white;
+        }
+        .social-icons a {
+          font-size: 1.3rem;
+          color: #fff;
+          transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+          color: #bf0fc6;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <header class="hero d-flex flex-column align-items-center" data-aos="fade">
+        <div class="gradient-overlay"></div>
+        <nav class="custom-navbar" id="navbar">
+          <ul class="navbar-nav align-items-center justify-content-between text-center gap-5">
+            <li class="nav-item">
+              <a href="#ideas" class="nav-link text-white">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="#clients" class="nav-link text-white">Clients</a>
+            </li>
+            <li class="nav-item logo-center">
+              <img src="logo.png" width="100" alt="logo" id="logo-btn" />
+            </li>
+            <li class="nav-item">
+              <a href="#services" class="nav-link text-white">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link text-white">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      
+      <section class="stats-section py-5 mt-3" data-aos="fade">
+        <div class="container">
+          <div class="row text-center g-4">
+            <div class="col-md-3">
+              <div class="stat-box p-4">
+                <h2 class="fw-bold"><span id="counter1">0</span>+</h2>
+                <p class="text-white-50 mb-0">Company</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="stat-box p-4">
+                <h2 class="fw-bold"><span id="counter2">0</span>+</h2>
+                <p class="text-white-50 mb-0">Years Exp.</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="stat-box p-4">
+                <h2 class="fw-bold"><span id="counter3">0</span>+</h2>
+                <p class="text-white-50 mb-0">Hours of Digital</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="stat-box p-4">
+                <h2 class="fw-bold"><span id="counter4">0</span>+</h2>
+                <p class="text-white-50 mb-0">In Tracked Revenue</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="ideas" class="ideas-section py-5 mt-3" data-aos="fade">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 row">
+              <div class="col-lg-6">
+                <h2>
+                  Turning Ideas Into <br />
+                  Masterpieces
+                </h2>
+              </div>
+              <div class="col-lg-6">
+                <p class="text-white-50">
+                  We transform every spark of imagination into lasting
+                  creations, shaping concepts with precision and passion to
+                  achieve excellence, blending innovation with artistry in ways
+                  that inspire progress, delivering unique solutions that stand
+                  timeless and remarkable.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-12 mt-2">
+              <img
+                src="imgs/stock-photo-business-team-celebrating-success.webp"
+                class="img-fluid"
+                alt="idea"
+              />
+              <img
+                src="imgs/360_F_1496562874_HlE0NRg8YUP9kXELIX73QHkstrN0nk7D.webp"
+                class="img-fluid"
+                alt="idea"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="clients" class="clients-section py-5 mt-3" data-aos="fade">
+        <div class="container">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="logos/053c3ce0-8e98-43bc-9f7b-ad41470eabce.webp"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/1515869a-b264-43a6-8f5a-c4b9bf4b4a36.webp"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/21f8dc25-74bf-4bcd-a834-cac5e9b4f786.webp"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/255cea01-8d30-4716-82db-14bf2afcc2c5.webp"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/2b7870dd-3d9e-4885-9a66-06ba2fa98c27.webp"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/3454eda7-6aae-4b6f-91af-bc8fcb90f3d5.webp"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/4e7676d8-a5e2-4829-9101-402d2b753f4b.png"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/618c3c17-cca2-4d3f-ba50-62de85f0726a.webp"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/7395f394-18f8-4538-aa6c-b7edf84d5b12.png"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/7ca1c834-1d6b-4023-b71a-be6da1e38af9.webp"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/91e1ff73-3214-4a6f-a0c5-245fed5b9ccb.png"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/9901cc2b-6be1-4761-90e2-9b5d44ee250a.png"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/bd8744d0-ebdf-4b4d-a7f0-908add745ced.png"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/c206075c-365e-480a-8edf-8801b5070f15.png"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/ecb572d4-67cf-423d-8ed3-c4540af78daf.png"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/ce85cd5b-bf3a-43f7-95dd-adad5942ab30.png"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="logos/ed6751b6-67ed-4958-a28b-d97c9b529e09.png"
+                  alt="Client"
+                  class="img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="services-section py-5 mt-3" data-aos="fade">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <h2 class="section-title">
+                Our
+                <span class="highlight"
+                  >Services <span class="overlay-bg"></span
+                ></span>
+              </h2>
+              <h6 class="whatWeDo">WHAT WE DO</h6>
+              <p class="text-white-50">
+                We offer a range of creative and digital services designed to
+                help your brand stand out.
+              </p>
+
+              <div class="service-list">
+                <div class="service-item active">
+                  <span class="number">01</span>
+                  <span class="name">UI/UX Design</span>
+                  <span class="arrow"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></span>
+                </div>
+                <div class="service-item">
+                  <span class="number">02</span>
+                  <span class="name">Web Development</span>
+                  <span class="arrow"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></span>
+                </div>
+                <div class="service-item">
+                  <span class="number">03</span>
+                  <span class="name">3D Designs</span>
+                  <span class="arrow"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></span>
+                </div>
+                <div class="service-item">
+                  <span class="number">04</span>
+                  <span class="name">Analize Market</span>
+                  <span class="arrow"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 text-center">
+              <div class="image-box">
+                <img
+                  src="imgs/stock-photo-business-team-discussing-their-ideas-or-work.webp"
+                  class="img-fluid"
+                  alt="expert"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-3 text-center">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <p class="text-white-50 mb-5">
+                    Ever wondered how marketing can transform your brand?
+                  </p>
+                  <div
+                    class="d-flex align-items-center justify-content-between flex-wrap"
+                  >
+                    <h5 class="text-white">See how we work</h5>
+                    <button class="btn btn-arrow">
+                      <i class="fa-solid fa-arrow-up-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="card card-special">
+                <div class="card-body">
+                  <p class="text-white-50 mb-5">
+                    Looking for marketing experts who can bring your vision to
+                    life?
+                  </p>
+                  <div
+                    class="d-flex align-items-center justify-content-between flex-wrap"
+                  >
+                    <h5 class="text-white">Meet our experts</h5>
+                    <button class="btn btn-arrow">
+                      <i class="fa-solid fa-arrow-up-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="text-section py-5 mt-3" data-aos="fade">
+        <div class="container">
+          <div class="row text-center">
+            <div class="shadow"></div>
+            <div class="col-lg-4">
+              <h2>Innovate</h2>
+            </div>
+            <div class="col-lg-4">
+              <h2>Inspire</h2>
+            </div>
+            <div class="col-lg-4">
+              <h2>Create</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="form-section py-5 mt-3" data-aos="fade">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h2 class="fw-bold text-white">Ready to transform your brand?</h2>
+              <p class="text-white-50">
+                Fill out the form below and let's get started on your marketing
+                journey.
+              </p>
+              <form>
+                <input
+                  type="text"
+                  class="form-control mt-2"
+                  placeholder="Full Name"
+                />
+                <input
+                  type="text"
+                  class="form-control mt-2"
+                  placeholder="Company Name"
+                />
+                <input
+                  type="email"
+                  class="form-control mt-2"
+                  placeholder="Company Email"
+                />
+                <input
+                  type="text"
+                  class="form-control mt-2"
+                  placeholder="Phone"
+                />
+                <textarea
+                  name=""
+                  id=""
+                  class="form-control mt-2"
+                  rows="2"
+                  placeholder="Message"
+                ></textarea>
+                <button class="btn-submit mt-2">Submit</button>
+              </form>
+            </div>
+            <div class="col-lg-6">
+              <img
+                src="imgs/istockphoto-1162354887-612x612.jpg"
+                class="img-fluid rounded"
+                alt="idea"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-4">
+              <div class="social-icons d-flex gap-3">
+                <a
+                  href="https://www.facebook.com/mogasoftpage"
+                  target="_blank"
+                  class=""
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/company/mogasoft"
+                  target="_blank"
+                  class=""
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="https://wa.me/201551114499" target="_blank" class="">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/mogasoft.page"
+                  target="_blank"
+                  class=""
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.tiktok.com/@mogasoftpage"
+                  target="_blank"
+                  class=""
+                  ><i class="fab fa-tiktok"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              © 2025 Mogasoft Integrated Solutions. All rights reserved
+            </div>
+            <div class="col-lg-4">
+              <div class="footer-bottom text-white">
+                <div class="links">
+                  <a class="mx-1" href="https://mogasoft.net/privacy-policy"
+                    >Privacy Policy</a
+                  >
+                  <a class="mx-1" href="https://mogasoft.net/terms-conditions"
+                    >Terms & Conditions</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <!-- <script>
     const lenis = new Lenis({
       duration: 1.2,
       smooth: true,
-      smoothTouch: false,
     });
-
+  
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
-  </script>
-</body>
+  </script> -->
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: { delay: 2000, disableOnInteraction: false },
+        breakpoints: {
+          320: { slidesPerView: 2 },
+          640: { slidesPerView: 3 },
+          1024: { slidesPerView: 5 },
+        },
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const options = { duration: 5 };
+
+        const counter1 = new countUp.CountUp("counter1", 2000, options);
+        const counter2 = new countUp.CountUp("counter2", 10, options);
+        const counter3 = new countUp.CountUp("counter3", 800, options);
+        const counter4 = new countUp.CountUp("counter4", 1000000, options);
+
+        function animateCounters() {
+          const section = document.querySelector(".stats-section");
+          const rect = section.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            counter1.start();
+            counter2.start();
+            counter3.start();
+            counter4.start();
+            window.removeEventListener("scroll", animateCounters);
+          }
+        }
+
+        window.addEventListener("scroll", animateCounters);
+      });
+    </script>
+    <script>
+      AOS.init({
+        duration: 1200,
+        once: true,
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <!-- الكود -->
+    <script>
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => 1 - Math.pow(1 - t, 5),
+        smoothWheel: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    </script>
+
+
+    <script>
+      const logoBtn = document.getElementById("logo-btn");
+const navbar = document.getElementById("navbar");
+
+logoBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  navbar.classList.toggle("expanded");
+});
+
+document.addEventListener("click", (e) => {
+  if (!navbar.contains(e.target)) {
+    navbar.classList.remove("expanded");
+  }
+});
+
+    </script>
+  </body>
 </html>
