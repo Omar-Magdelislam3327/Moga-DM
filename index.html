@@ -50,10 +50,15 @@
       }
 
       .hero {
-  background: url("imgs/marketing.png") center/cover no-repeat;
   height: 100vh;
   position: relative;
   border-radius: 0px 0px 200px 200px;
+  background: url("imgs/marketing-blur.png") center/cover no-repeat;
+  transition: background-image 0.8s ease-in-out;
+}
+
+.hero.loaded {
+  background: url("imgs/marketing.png") center/cover no-repeat;
 }
 
 .gradient-overlay {
@@ -1048,6 +1053,16 @@ serviceItems.forEach((item) => {
         }
       }, 1500);
     });
+    // 
+    document.addEventListener("DOMContentLoaded", () => {
+  const hero = document.querySelector(".hero");
+  const img = new Image();
+  img.src = "imgs/marketing.png";
+  img.onload = () => {
+    hero.classList.add("loaded");
+  };
+});
+
   </script>
   
   
