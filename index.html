@@ -15,6 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/all.min.css" />
     <style>
       body {
@@ -60,6 +61,7 @@
   inset: 0;
   z-index: 1;
 }
+
 .custom-navbar {
   background-color: #000;
   border-radius: 50px;
@@ -115,7 +117,7 @@
   .custom-navbar {
     border-radius: 50px;
     padding: 10px 50px;
-    transition: width 0.3s;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.3, 1);
   }
   .custom-navbar ul {
     flex-direction: column;
@@ -149,7 +151,7 @@
         .plus {
           color: #bf0fc6;
         }
-        .shadow {
+        /* .shadow {
           background: #bf0fc6;
           position: absolute;
           top: -182px;
@@ -159,7 +161,7 @@
           border-radius: 304.031px;
           opacity: 0.15000000596046448;
           filter: blur(60px);
-        }
+        } */
       }
       .ideas-section {
         h2 {
@@ -339,7 +341,7 @@
           font-size: 3.5rem;
           color: white;
         }
-        .shadow {
+        /* .shadow {
           background: #bf0fc6;
           position: absolute;
           top: -182px;
@@ -349,7 +351,7 @@
           border-radius: 304.031px;
           opacity: 0.15000000596046448;
           filter: blur(60px);
-        }
+        } */
       }
 
       .form-control {
@@ -384,10 +386,32 @@
         background-color: #901694;
       }
 
-      .btn-submit:disabled {
-        background-color: black;
-        cursor: not-allowed;
-      }
+      
+.btn-submit:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
+.spinner {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 8px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.btn-text,
+.btn-loading {
+  transition: opacity 0.3s ease;
+}
+
       footer {
         background-color: #2a2a2a;
         color: white;
@@ -692,7 +716,7 @@
                   <div
                     class="d-flex align-items-center justify-content-between flex-wrap"
                   >
-                    <h5 class="text-white">See how we work</h5>
+                    <h5 class="text-white">How we work</h5>
                     <button class="btn btn-arrow">
                       <i class="fa-solid fa-arrow-up-right"></i>
                     </button>
@@ -746,36 +770,56 @@
                 Fill out the form below and let's get started on your marketing
                 journey.
               </p>
-              <form>
+              <form id="contactForm"
+              action="https://script.google.com/macros/s/AKfycbz8BDZg5Z3JveVU6xJ7SaVevmXzee_e0_lJgOFqGmcAChATY0IKUSQTSco5reVlPk6hVw/exec"
+              method="POST"
+              target="hidden_iframe"
+              onsubmit="submitted=true;">
                 <input
                   type="text"
+                  name="fullName"
                   class="form-control mt-2"
                   placeholder="Full Name"
+                  required
                 />
                 <input
                   type="text"
+                  name="companyName"
                   class="form-control mt-2"
                   placeholder="Company Name"
+                  required
                 />
                 <input
                   type="email"
+                  name="email"
                   class="form-control mt-2"
                   placeholder="Company Email"
+                  required
                 />
                 <input
                   type="text"
+                  name="phone"
                   class="form-control mt-2"
                   placeholder="Phone"
+                  required
                 />
                 <textarea
-                  name=""
-                  id=""
+                  name="message"
                   class="form-control mt-2"
                   rows="2"
                   placeholder="Message"
+                  required
                 ></textarea>
-                <button class="btn-submit mt-2">Submit</button>
+                <button id="submitBtn" type="submit" class="btn-submit">
+                  <span class="btn-text">Submit</span>
+                  <span class="btn-loading" style="display:none;">
+                    <div class="d-flex justify-content-center align-items-center flex-wrap">
+                      <span class="spinner"></span> Sending...
+                    </div>
+                  </span>
+                </button>
               </form>
+              <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
             </div>
             <div class="col-lg-6 d-none d-lg-block">
               <img
@@ -843,6 +887,7 @@
         </div>
       </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -964,8 +1009,47 @@ serviceItems.forEach((item) => {
     }
   });
 });
-
+  
 
     </script>
+  
+  <script>
+    let submitted = false;
+    const form = document.getElementById("contactForm");
+    const btn = document.getElementById("submitBtn");
+    const btnText = btn.querySelector(".btn-text");
+    const btnLoading = btn.querySelector(".btn-loading");
+  
+    form.addEventListener("submit", function() {
+      submitted = true;
+      // تعطيل الزرار + إظهار اللودينج
+      btn.disabled = true;
+      btnText.style.display = "none";
+      btnLoading.style.display = "inline-flex";
+  
+      setTimeout(() => {
+        if (submitted) {
+          form.reset();
+          btn.disabled = false;
+          btnText.style.display = "inline";
+          btnLoading.style.display = "none";
+          submitted = false;
+  
+          Swal.fire({
+            icon: 'success',
+            title: 'Thank you for your message!',
+            text: 'We will get back to you as soon as possible.',
+            background: 'black',
+            borderColor: '#2b2b2b',
+            color: 'white',
+            showConfirmButton: false,
+            timer: 3000
+          });
+        }
+      }, 1500);
+    });
+  </script>
+  
+  
   </body>
 </html>
