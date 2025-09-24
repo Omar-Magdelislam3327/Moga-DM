@@ -53,12 +53,25 @@
   height: 100vh;
   position: relative;
   border-radius: 0px 0px 200px 200px;
-  background: url("imgs/marketing-blur.png") center/cover no-repeat;
-  transition: background-image 0.8s ease-in-out;
+  overflow: hidden;
 }
 
-.hero.loaded {
-  background: url("imgs/marketing.png") center/cover no-repeat;
+/* الخلفية */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(20px);
+  transform: scale(1.1);
+  transition: filter 0.8s ease, transform 0.8s ease;
+  z-index: 0;
+}
+
+.hero-bg.loaded {
+  filter: blur(0);
+  transform: scale(1);
 }
 
 .gradient-overlay {
@@ -440,7 +453,15 @@
   <body>
     <div>
       <header class="hero d-flex flex-column align-items-center" data-aos="fade">
+        <!-- الخلفية بالصورة -->
+        <img src="imgs/marketing-blur.jpg" 
+             data-src="imgs/marketing.png" 
+             alt="hero background" 
+             class="hero-bg" 
+             loading="eager" />
+      
         <div class="gradient-overlay"></div>
+      
         <nav class="custom-navbar" id="navbar">
           <ul class="navbar-nav align-items-center justify-content-between text-center gap-5">
             <li class="nav-item">
@@ -461,6 +482,7 @@
           </ul>
         </nav>
       </header>
+      
       
       <section class="stats-section py-5 px-lg-0 px-3 mt-3" data-aos="fade">
         <div class="container">
@@ -1055,13 +1077,16 @@ serviceItems.forEach((item) => {
     });
     // 
     document.addEventListener("DOMContentLoaded", () => {
-  const hero = document.querySelector(".hero");
+  const heroImg = document.querySelector(".hero-bg");
+  const fullRes = heroImg.getAttribute("data-src");
   const img = new Image();
-  img.src = "imgs/marketing.png";
+  img.src = fullRes;
   img.onload = () => {
-    hero.classList.add("loaded");
+    heroImg.src = fullRes;
+    heroImg.classList.add("loaded");
   };
 });
+
 
   </script>
   
