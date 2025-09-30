@@ -122,7 +122,7 @@ function initSwiper() {
     let submitted = false;
   
     form.addEventListener("submit", function (e) {
-      e.preventDefault(); // منع Reload الصفحة
+      e.preventDefault();
       submitted = true;
       btn.disabled = true;
       btnText.style.display = "none";

@@ -114,7 +114,7 @@
         ]
       }
     </script>
-    
+    <link rel="icon" type="image/x-icon" href="imgs/logo.ico">
     <!--  -->
     <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -125,6 +125,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <link rel="preload" as="image" href="imgs/marketing-test-blur.webp" />
+    <link rel="preload" as="image" href="imgs/marketing-test.webp" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/all.min.css" />
@@ -277,17 +279,18 @@
       }
 
       .btns {
-        position: absolute;
         backdrop-filter: blur(8px);
-        bottom: -80px;
-        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
         -webkit-backdrop-filter: blur(10px);
         box-shadow: 0 0 10px rgba(167, 16, 90, 0.5);
-        /* background: rgba(255, 255, 255, 0.1); */
-        /* border: 1px solid rgba(255, 255, 255, 0.2); */
+        background: rgba(255, 255, 255, 0.2);
         padding: 5px 10px;
         border-radius: 50px;
-        transform: translate(-45%, -10%);
+        margin-top: auto;
       }
       @media (max-width: 768px) {
         .btns {
@@ -368,7 +371,7 @@
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: 2rem;
+        gap: 2rem; 
       }
 
       .hero-left,
@@ -701,7 +704,8 @@
   <body>
     <div>
       <header class="hero d-flex flex-column align-items-center" data-aos="fade">
-        <img src="imgs/marketing-blur.jpg" data-src="imgs/marketing-test.png" alt="hero background" class="hero-bg" loading="eager" />
+        <img src="imgs/marketing-test-blur.webp" data-src="imgs/marketing-test.webp" alt="hero background" class="hero-bg" loading="eager"
+        decoding="async" />
         <div class="gradient-overlay"></div>
         <nav class="custom-navbar" id="navbar">
           <ul class="navbar-nav align-items-center justify-content-between text-center gap-5">
@@ -723,36 +727,37 @@
             <img class="shape1 d-lg-block d-none" src="imgs/jea.png" width="100" alt="">
           </div>
       
-          <div class="hero-body row">
-            <div class="hero-left col-md-3 d-lg-block d-none">
-              <p class="text-start">
-                At Mogasoft, we help businesses transform into powerful brands.
-                With strategies tailored for Egypt and the GCC, our digital marketing
-                solutions deliver traffic, leads, and sales all <br> backed by data.
-              </p>
-              <button class="btn-outline">Book a Free Consultation</button>
+          <div class="row">
+            <div class="col-lg-4 d-lg-block d-none">
+              <div class="hero-left">
+                <p class="text-start">
+                  At Mogasoft, we help businesses transform into powerful brands.
+                  With strategies tailored for Egypt and the GCC, our digital marketing
+                  solutions deliver traffic, leads, and sales all <br> backed by data.
+                </p>
+                <button class="btn-outline">Book a Free Consultation</button>
+              </div>
             </div>
-      
-            <!-- <div class="hero-image">
-              <img src="imgs/marketing.png"  alt="Marketing Image" />
-            </div> -->
-            <div class="col-md-3">
-              <div class="btns d-flex align-items-center justify-content-center gap-2 text-center">
+
+            <div class="col-lg-4 text-center d-flex flex-column">
+              <div class="btns">
                 <button class="btn-glassy-primary">Start Journey</button>
                 <button class="btn-glassy">Let's Collaborate</button>
               </div>
             </div>
-      
-            <div class="hero-right text-center col-md-3 d-lg-block d-none">
-              <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+
+            <div class="col-lg-4 text-center d-lg-block d-none">
+              <div class="hero-right">
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h3 class="m-0">10 Years</h3>
+                <p>Experience</p>
               </div>
-              <h3 class="m-0">10 Years</h3>
-              <p>Experience</p>
             </div>
           </div>
         </section>
