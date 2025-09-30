@@ -3,8 +3,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mogasoft</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <title>MogaSoft | Digital Marketing Solutions Egypt & GCC</title>
+    <meta name="description" content="Boost sales & brand growth with Mogasoft’s digital marketing solutions: content strategy, ads, e-commerce, analytics & dashboards. Book a free consultation today!">
+    <meta name="keywords" content="Digital marketing solutions Egypt, marketing agency Egypt, performance ads Egypt GCC, e-commerce marketing Egypt, content marketing strategy Egypt, SEO marketing Egypt, marketing analytics GCC, digital marketing company Cairo">
+    <!--  -->
+    <meta property="og:title" content="Digital Marketing Solutions Egypt & GCC | MogaSoft">
+    <meta property="og:description" content="Boost sales & brand growth with Mogasoft’s digital marketing solutions: content strategy, ads, e-commerce, analytics & dashboards. Book a free consultation today!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mogasoft-dm.net/">
+    <meta property="og:image" content="https://mogasoft-dm.net/imgs/og-image.jpg">
+    <!--  -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Digital Marketing Solutions Egypt & GCC | MogaSoft">
+    <meta name="twitter:description" content="Boost sales & brand growth with Mogasoft’s digital marketing solutions: content strategy, ads, e-commerce, analytics & dashboards. Book a free consultation today!">
+    <meta name="twitter:image" content="https://mogasoft-dm.net/imgs/og-image.jpg">
+    <!--  -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "additionalType": "https://schema.org/MarketingAgency",
+        "name": "شركة موجاسوفت للحلول المتكاملة",
+        "url": "https://mogasoft-dm.net/",
+        "logo": "https://mogasoft-dm.net/imgs/logo.png",
+        "description": "Boost sales & brand growth with Mogasoft’s digital marketing solutions: content strategy, ads, e-commerce, analytics & dashboards.",
+        "foundingDate": "2020",
+        "founder": {
+          "@type": "Person",
+          "name": "MogaSoft Team"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+201060914449",
+          "contactType": "Customer Service",
+          "areaServed": "EG, SA, AE, GCC",
+          "availableLanguage": ["en", "ar"]
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Hadayek El-Zaiton",
+          "addressLocality": "Cairo",
+          "addressRegion": "Cairo",
+          "postalCode": "11765",
+          "addressCountry": "EG"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "30.104861",
+          "longitude": "31.306722"
+        },
+        "hasMap": "https://www.google.com/maps?q=30.104861,31.306722",
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday"
+          ],
+          "opens": "10:00",
+          "closes": "18:00"
+        }],
+        "sameAs": [
+          "https://www.facebook.com/mogasoft",
+          "https://www.linkedin.com/company/mogasoft",
+          "https://twitter.com/mogasoft"
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO Marketing",
+              "description": "Improve website visibility and ranking on search engines with tailored SEO strategies."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Performance Ads",
+              "description": "Maximize ROI with data-driven advertising campaigns across Google, Meta, and regional platforms."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Content Marketing",
+              "description": "Create engaging and conversion-focused content strategies that strengthen brand presence."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "E-commerce Marketing",
+              "description": "Drive online store sales through integrated e-commerce strategies and performance marketing."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Marketing Analytics & Dashboards",
+              "description": "Track, measure, and optimize performance with advanced analytics and custom dashboards."
+            }
+          }
+        ]
+      }
+    </script>
+    
+    <!--  -->
     <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,6 +128,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <style>
       body {
         background-color: black;
@@ -33,7 +145,7 @@
       p::selection,
       label::selection,
       span::selection {
-        background-color: #bf0fc6;
+        background-color: #A7105A;
         color: white;
       }
 
@@ -42,7 +154,7 @@
       }
 
       ::-webkit-scrollbar-thumb {
-        background-color: #bf0fc6;
+        background-color: #A7105A;
       }
 
       ::-webkit-scrollbar-track {
@@ -50,114 +162,249 @@
       }
 
       .hero {
-  height: 100vh;
-  position: relative;
-  border-radius: 0px 0px 200px 200px;
-  overflow: hidden;
-}
+        height: 100vh;
+        position: relative;
+        border-radius: 0px 0px 200px 200px;
+        overflow: hidden;
+      }
 
-/* الخلفية */
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(20px);
-  transform: scale(1.1);
-  transition: filter 0.8s ease, transform 0.8s ease;
-  z-index: 0;
-}
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: blur(20px);
+        transform: scale(1.1);
+        transition: filter 0.8s ease, transform 0.8s ease;
+        z-index: 0;
+      }
 
-.hero-bg.loaded {
-  filter: blur(0);
-  transform: scale(1);
-}
+      .hero-bg.loaded {
+        filter: blur(0);
+        transform: scale(1);
+      }
 
-.gradient-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
+      .gradient-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+      }
 
-.custom-navbar {
-  background-color: #000;
-  border-radius: 50px;
-  padding: 10px 30px;
-  width: fit-content;
-  margin-top: 20px;
-  font-size: 1rem;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  z-index: 10;
-  a {
-    font-size: 18px;
-    font-weight: 500;
-    transition: 0.3s;
-  }
-  a:hover {
-    color: #bf0fc6 !important;
-  }
-}
+      .custom-navbar {
+        background-color: #000;
+        border-radius: 50px;
+        padding: 4px 30px;
+        width: fit-content;
+        margin-top: 14px;
+        font-size: 1rem;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        z-index: 10;
+        a {
+          font-size: 18px;
+          font-weight: 500;
+          transition: 0.3s;
+        }
+        a:hover {
+          color: #A7105A !important;
+        }
+      }
 
-@media (min-width: 769px) {
-  .custom-navbar {
-    width: 90%;
-    max-width: 1000px;
-    border-radius: 50px;
-  }
+      @media (min-width: 769px) {
+        .custom-navbar {
+          width: 90%;
+          max-width: 1000px;
+          border-radius: 50px;
+        }
 
-  .custom-navbar ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 2rem;
-    padding: 0 40px !important;
-  }
+        .custom-navbar ul {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          gap: 2rem;
+          padding: 0 40px !important;
+        }
 
-  .custom-navbar li {
-    list-style: none;
-  }
+        .custom-navbar li {
+          list-style: none;
+        }
 
-  .custom-navbar .logo-center {
-    order: 3;
-    margin: 0 2rem;
-  }
+        .custom-navbar .logo-center {
+          order: 3;
+          margin: 0 2rem;
+        }
 
-  .custom-navbar ul .nav-item:nth-child(1) { order: 1; }
-  .custom-navbar ul .nav-item:nth-child(2) { order: 2; }
-  .custom-navbar ul .nav-item:nth-child(4) { order: 4; }
-  .custom-navbar ul .nav-item:nth-child(5) { order: 5; }
-}
+        .custom-navbar ul .nav-item:nth-child(1) { order: 1; }
+        .custom-navbar ul .nav-item:nth-child(2) { order: 2; }
+        .custom-navbar ul .nav-item:nth-child(4) { order: 4; }
+        .custom-navbar ul .nav-item:nth-child(5) { order: 5; }
+      }
 
 
-@media (max-width: 768px) {
-  .custom-navbar {
-    border-radius: 50px;
-    padding: 10px 50px;
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.3, 1);
-  }
-  .custom-navbar ul {
-    flex-direction: column;
-  }
-  .custom-navbar ul .nav-item:not(.logo-center) {
-    display: none;
-  }
+      @media (max-width: 768px) {
+        .custom-navbar {
+          border-radius: 50px;
+          padding: 10px 50px;
+          transition: all 0.4s cubic-bezier(0.25, 1, 0.3, 1);
+        }
+        .custom-navbar ul {
+          flex-direction: column;
+        }
+        .custom-navbar ul .nav-item:not(.logo-center) {
+          display: none;
+        }
 
-  .custom-navbar.expanded {
-    width: 90%;
-    max-width: 400px;
-  }
+        .custom-navbar.expanded {
+          width: 90%;
+          max-width: 400px;
+        }
 
-  .custom-navbar.expanded ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
+        .custom-navbar.expanded ul {
+          flex-direction: column;
+          gap: 1rem;
+        }
 
-  .custom-navbar.expanded ul .nav-item {
-    display: block;
-  }
-}
+        .custom-navbar.expanded ul .nav-item {
+          display: block;
+        }
+      }
+      .hero-content {
+        position: relative;
+        margin: 0 auto;
+        padding: 30px 20px;
+        z-index: 10;
+      }
+
+      .btns {
+        position: absolute;
+        backdrop-filter: blur(8px);
+        bottom: -80px;
+        left: 50%;
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 0 10px rgba(167, 16, 90, 0.5);
+        /* background: rgba(255, 255, 255, 0.1); */
+        /* border: 1px solid rgba(255, 255, 255, 0.2); */
+        padding: 5px 10px;
+        border-radius: 50px;
+        transform: translate(-45%, -10%);
+      }
+      @media (max-width: 768px) {
+        .btns {
+          width: 100%;
+          left: 45%;
+          bottom: -130%;
+          padding: 10px 20px;
+        }
+      }
+      .btns .btn-glassy {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        padding: 5px 30px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .btns .btn-glassy-primary {
+        background: rgba(167, 16, 89);
+        border: 1px solid rgba(167, 16, 89, 0.3);
+        color: white;
+        padding: 5px 30px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      
+      .btns .btn-glassy:hover {
+        background: rgba(255, 255, 255, 0.25);
+      }
+      .btns .btn-glassy-primary:hover {
+        background: rgba(167, 16, 89, 0.8);
+      }
+
+      .title-section{
+        position: relative;
+      }
+      .title-section .shape{
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: infiniteRotate 20s infinite;
+      }
+      @keyframes infiniteRotate {
+        0%{
+          rotate: 0deg;
+        }
+        50%{
+          rotate: 180deg;
+        }
+        100%{
+          rotate: 0deg;
+        }
+      }
+      .title-section .shape1{
+        position: absolute;
+        top: 90px;
+        right: 145px;
+      }
+
+
+      .hero-title {
+        font-family: 'HelveticaNeue', sans-serif;
+        font-size: 3.6rem;
+        font-weight: 700;
+        margin-bottom: 70px;
+        color: #111;
+      }
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+      }
+
+      .hero-body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .hero-left,
+      .hero-right {
+        font-family: 'HelveticaNeue', sans-serif;
+        font-weight: 500;
+        flex: 1 1 400px;
+        max-width: 400px;
+        color: #333;
+      }
+
+      .hero-left p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .hero-right .stars {
+        color: #A7105A;
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+      }
+
+      .btn-outline{
+        background-color: transparent;
+        border: 2px solid #333;
+        padding: 8px 26px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .btn-outline:hover{
+        background-color: #000;
+        color: white;
+      }
 
       .stats-section .container {
         position: relative;
@@ -167,10 +414,10 @@
         border-radius: 50px;
         /* overflow-x: hidden !important; */
         .plus {
-          color: #bf0fc6;
+          color: #A7105A;
         }
         /* .shadow {
-          background: #bf0fc6;
+          background: #A7105A;
           position: absolute;
           top: -182px;
           left: -200px;
@@ -235,8 +482,8 @@
       .whatWeDo {
         position: absolute;
         left: -45px;
-        /* top: 0; */
-        background: #bf0fc6;
+        top: 90px;
+        background: #A7105A;
         padding: 5px;
         width: auto;
         transform: rotate(270deg);
@@ -250,7 +497,7 @@
       .section-title .highlight .overlay-bg {
         position: absolute;
         inset: 0;
-        background: #bf0fc6;
+        background: #A7105A;
         border-radius: 12px;
         z-index: -50;
         transform: skewX(-15deg);
@@ -275,7 +522,7 @@
       }
 
       .service-item .number {
-        color: #bf0fc6;
+        color: #A7105A;
         font-weight: bold;
         font-size: 1.8rem;
       }
@@ -296,10 +543,10 @@
       }
 
       .image-box img {
-        margin-top: 50px;
-        /* max-height: 350px; */
-        /* object-fit: cover; */
-        border-radius: 24px;
+        /* margin-top: 142px; */
+        /* max-height: 450px; */
+        object-fit: cover;
+        border-radius: 50px;
         transition: opacity 0.4s ease;
       }
       .image-box img.fade-out {
@@ -314,7 +561,7 @@
         text-align: start !important;
       }
       .services-section .card-special {
-        background-color: #bf0fc6 !important;
+        background-color: #A7105A !important;
         border: none;
 
         .btn-arrow {
@@ -345,7 +592,7 @@
       }
 
       .btn-arrow:hover {
-        background-color: #bf0fc6 !important;
+        background-color: #A7105A !important;
         i {
           transform: translate(2px, -4px);
         }
@@ -360,7 +607,7 @@
           color: white;
         }
         /* .shadow {
-          background: #bf0fc6;
+          background: #A7105A;
           position: absolute;
           top: -182px;
           right: -150px;
@@ -384,11 +631,11 @@
       }
       .form-control:focus {
         /* background: ; */
-        border-color: #bf0fc6;
+        border-color: #A7105A;
         box-shadow: none;
       }
       .btn-submit {
-        background-color: #bf0fc6;
+        background-color: #A7105A;
         margin-top: 30px !important;
         margin-bottom: 30px !important;
         color: white;
@@ -445,70 +692,97 @@
         }
 
         .social-icons a:hover {
-          color: #bf0fc6;
+          color: #A7105A;
         }
       }
+
     </style>
   </head>
   <body>
     <div>
       <header class="hero d-flex flex-column align-items-center" data-aos="fade">
-        <!-- الخلفية بالصورة -->
-        <img src="imgs/marketing-blur.jpg" 
-             data-src="imgs/marketing.png" 
-             alt="hero background" 
-             class="hero-bg" 
-             loading="eager" />
-      
+        <img src="imgs/marketing-blur.jpg" data-src="imgs/marketing-test.png" alt="hero background" class="hero-bg" loading="eager" />
         <div class="gradient-overlay"></div>
-      
         <nav class="custom-navbar" id="navbar">
           <ul class="navbar-nav align-items-center justify-content-between text-center gap-5">
-            <li class="nav-item">
-              <a href="#ideas" class="nav-link text-white">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a href="#clients" class="nav-link text-white">Clients</a>
-            </li>
-            <li class="nav-item logo-center">
-              <img src="logo.png" width="100" alt="logo" id="logo-btn" />
-            </li>
-            <li class="nav-item">
-              <a href="#services" class="nav-link text-white">Services</a>
-            </li>
-            <li class="nav-item">
-              <a href="#contact" class="nav-link text-white">Contact</a>
-            </li>
+            <li class="nav-item"><a href="#ideas" class="nav-link text-white">About Us</a></li>
+            <li class="nav-item"><a href="#clients" class="nav-link text-white">Clients</a></li>
+            <li class="nav-item logo-center"><img src="logo.png" width="100" alt="logo" id="logo-btn" /></li>
+            <li class="nav-item"><a href="#services" class="nav-link text-white">Services</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link text-white">Contact</a></li>
           </ul>
         </nav>
-      </header>
       
+        <!-- ===== CONTENT SECTION ===== -->
+        <section class="hero-content container-fluid">
+          <div class="title-section">
+            <h1 class="hero-title text-center">
+              Digital Marketing Solutions <br> That Drive Real Growth
+            </h1>
+            <img class="shape d-lg-block d-none" src="imgs/hjVDSA.png" width="150" alt="">
+            <img class="shape1 d-lg-block d-none" src="imgs/jea.png" width="100" alt="">
+          </div>
+      
+          <div class="hero-body row">
+            <div class="hero-left col-md-3 d-lg-block d-none">
+              <p class="text-start">
+                At Mogasoft, we help businesses transform into powerful brands.
+                With strategies tailored for Egypt and the GCC, our digital marketing
+                solutions deliver traffic, leads, and sales all <br> backed by data.
+              </p>
+              <button class="btn-outline">Book a Free Consultation</button>
+            </div>
+      
+            <!-- <div class="hero-image">
+              <img src="imgs/marketing.png"  alt="Marketing Image" />
+            </div> -->
+            <div class="col-md-3">
+              <div class="btns d-flex align-items-center justify-content-center gap-2 text-center">
+                <button class="btn-glassy-primary">Start Journey</button>
+                <button class="btn-glassy">Let's Collaborate</button>
+              </div>
+            </div>
+      
+            <div class="hero-right text-center col-md-3 d-lg-block d-none">
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <h3 class="m-0">10 Years</h3>
+              <p>Experience</p>
+            </div>
+          </div>
+        </section>
+      </header>
       
       <section class="stats-section py-5 px-lg-0 px-3 mt-3" data-aos="fade">
         <div class="container">
-          <div class="row text-center g-4">
+          <div class="row text-center">
             <div class="shadow"></div>
             <div class="col-md-3">
               <div class="stat-box p-4">
-                <h2 class="fw-bold"><span id="counter1">0</span>+</h2>
+                <h2 class="fw-bold"><span id="counter1">0</span><span class="plus"> +</span></h2>
                 <p class="text-white-50 mb-0">Company</p>
               </div>
             </div>
             <div class="col-md-3">
               <div class="stat-box p-4">
-                <h2 class="fw-bold"><span id="counter2">0</span>+</h2>
+                <h2 class="fw-bold"><span id="counter2">0</span><span class="plus"> +</span></h2>
                 <p class="text-white-50 mb-0">Years Exp.</p>
               </div>
             </div>
             <div class="col-md-3">
               <div class="stat-box p-4">
-                <h2 class="fw-bold"><span id="counter3">0</span>+</h2>
+                <h2 class="fw-bold"><span id="counter3">0</span><span class="plus"> +</span></h2>
                 <p class="text-white-50 mb-0">Hours of Digital</p>
               </div>
             </div>
             <div class="col-md-3">
               <div class="stat-box p-4">
-                <h2 class="fw-bold"><span id="counter4">0</span>+</h2>
+                <h2 class="fw-bold"><span id="counter4">0</span><span class="plus"> +</span></h2>
                 <p class="text-white-50 mb-0">In Tracked Revenue</p>
               </div>
             </div>
@@ -528,11 +802,10 @@
               </div>
               <div class="col-lg-6">
                 <p class="text-white-50">
-                  We transform every spark of imagination into lasting
-                  creations, shaping concepts with precision and passion to
-                  achieve excellence, blending innovation with artistry in ways
-                  that inspire progress, delivering unique solutions that stand
-                  timeless and remarkable.
+                  We transform imagination into lasting creations with precision, passion, and artistry.
+                  Offering end-to-end digital marketing under one roof, powered by advanced analytics and data-driven insights.
+                  With regional expertise across Egypt and GCC, we deliver performance-driven campaigns with proven ROI.
+                  Our scalable strategies empower startups and enterprises to grow and achieve lasting impact.
                 </p>
               </div>
             </div>
@@ -687,47 +960,53 @@
       <section id="services" class="services-section py-5 px-lg-0 px-3 mt-3" data-aos="fade">
         <div class="container">
           <div class="row align-items-center">
+            <h2 class="section-title">
+              Our
+              <span class="highlight">
+                Services <span class="overlay-bg"></span>
+              </span>
+            </h2>
+            <h6 class="whatWeDo">WHAT WE DO</h6>
+            <p class="text-white-50">
+              We offer a range of creative and digital services designed to
+              help your brand stand out.
+            </p>
             <div class="col-lg-6">
-              <h2 class="section-title">
-                Our
-                <span class="highlight">
-                  Services <span class="overlay-bg"></span>
-                </span>
-              </h2>
-              <h6 class="whatWeDo">WHAT WE DO</h6>
-              <p class="text-white-50">
-                We offer a range of creative and digital services designed to
-                help your brand stand out.
-              </p>
+              
           
               <div class="service-list">
-                <div class="service-item active" data-img="imgs/stock-photo-business-team-discussing-their-ideas-or-work.webp">
+                <div class="service-item active" data-img="imgs/content.png">
                   <span class="number">01</span>
-                  <span class="name">UI/UX Design</span>
+                  <span class="name">Content Strategy</span>
                   <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
                 </div>
-                <div class="service-item" data-img="imgs/istockphoto-1162354887-612x612.jpg">
+                <div class="service-item" data-img="imgs/strategy.png">
                   <span class="number">02</span>
-                  <span class="name">Web Development</span>
+                  <span class="name">Marketing Strategy & Analytics</span>
                   <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
                 </div>
-                <div class="service-item" data-img="imgs/istockphoto-2190888827-612x612.jpg">
+                <div class="service-item" data-img="imgs/ads.png">
                   <span class="number">03</span>
-                  <span class="name">3D Designs</span>
+                  <span class="name">Performance Ads</span>
                   <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
                 </div>
-                <div class="service-item" data-img="imgs/stock-photo-business-team-discussing-their-ideas-or-work.webp">
+                <div class="service-item" data-img="imgs/commerce.png">
                   <span class="number">04</span>
-                  <span class="name">Analize Market</span>
+                  <span class="name">E-Commerce Marketing Strategies</span>
+                  <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                <div class="service-item" data-img="imgs/dashboard.png">
+                  <span class="number">05</span>
+                  <span class="name">Dashboard & Market Research</span>
                   <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
                 </div>
               </div>
             </div>
           
-            <div class="col-lg-3 text-center">
+            <div class="col-lg-3 text-center d-lg-block d-none">
               <div class="image-box">
                 <img
-                  src="imgs/stock-photo-business-team-discussing-their-ideas-or-work.webp"
+                  src="imgs/content.png"
                   class="img-fluid mb-3 main-img"
                   alt="expert"
                 />
@@ -792,10 +1071,9 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
-              <h2 class="fw-bold text-white">Ready to transform your brand?</h2>
+              <h2 class="fw-bold text-white">Scale Your Business with Mogasoft</h2>
               <p class="text-white-50">
-                Fill out the form below and let's get started on your marketing
-                journey.
+                Whether you’re a startup or enterprise, our solutions are designed to help you grow, convert, and dominate your market.
               </p>
               <form id="contactForm"
               action="https://script.google.com/macros/s/AKfycbz8BDZg5Z3JveVU6xJ7SaVevmXzee_e0_lJgOFqGmcAChATY0IKUSQTSco5reVlPk6hVw/exec"
@@ -864,7 +1142,7 @@
         <div class="container">
           <div class="row align-items-center text-center">
             <div class="col-lg-4">
-              <div class="social-icons d-flex gap-3">
+              <div class="social-icons d-flex justify-content-center gap-3">
                 <a
                   href="https://www.facebook.com/mogasoftpage"
                   target="_blank"
@@ -896,7 +1174,7 @@
             </div>
 
             <div class="col-lg-4">
-              © 2025 Mogasoft Integrated Solutions. All rights reserved
+              © 2025 Mogasoft. All rights reserved
             </div>
             <div class="col-lg-4">
               <div class="footer-bottom text-white">
@@ -914,182 +1192,12 @@
         </div>
       </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-
-    <!-- <script>
-    const lenis = new Lenis({
-      duration: 1.2,
-      smooth: true,
-    });
-  
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  </script> -->
-
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 5,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: { delay: 2000, disableOnInteraction: false },
-        breakpoints: {
-          320: { slidesPerView: 2 },
-          640: { slidesPerView: 3 },
-          1024: { slidesPerView: 5 },
-        },
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const options = { duration: 5 };
-
-        const counter1 = new countUp.CountUp("counter1", 2000, options);
-        const counter2 = new countUp.CountUp("counter2", 10, options);
-        const counter3 = new countUp.CountUp("counter3", 800, options);
-        const counter4 = new countUp.CountUp("counter4", 1000000, options);
-
-        function animateCounters() {
-          const section = document.querySelector(".stats-section");
-          const rect = section.getBoundingClientRect();
-          if (rect.top < window.innerHeight && rect.bottom >= 0) {
-            counter1.start();
-            counter2.start();
-            counter3.start();
-            counter4.start();
-            window.removeEventListener("scroll", animateCounters);
-          }
-        }
-
-        window.addEventListener("scroll", animateCounters);
-      });
-    </script>
-    <script>
-      AOS.init({
-        duration: 1200,
-        once: true,
-      });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-
-    <!-- الكود -->
-    <script>
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => 1 - Math.pow(1 - t, 5),
-        smoothWheel: true,
-      });
-
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-    </script>
-
-
-    <script>
-      const logoBtn = document.getElementById("logo-btn");
-const navbar = document.getElementById("navbar");
-
-logoBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  navbar.classList.toggle("expanded");
-});
-
-document.addEventListener("click", (e) => {
-  if (!navbar.contains(e.target)) {
-    navbar.classList.remove("expanded");
-  }
-});
-
-
-const serviceItems = document.querySelectorAll(".service-item");
-const mainImg = document.querySelector(".main-img");
-
-serviceItems.forEach((item) => {
-  item.addEventListener("mouseenter", () => {
-    // remove old active
-    serviceItems.forEach((el) => el.classList.remove("active"));
-    item.classList.add("active");
-
-    const newSrc = item.getAttribute("data-img");
-
-    // check if it's already the same img
-    if (mainImg.getAttribute("src") !== newSrc) {
-      // fade out
-      mainImg.classList.add("fade-out");
-
-      // بعد نص ثانية غير الصورة و اعمل fade in
-      setTimeout(() => {
-        mainImg.setAttribute("src", newSrc);
-        mainImg.classList.remove("fade-out");
-      }, 300);
-    }
-  });
-});
-  
-
-    </script>
-  
-  <script>
-    let submitted = false;
-    const form = document.getElementById("contactForm");
-    const btn = document.getElementById("submitBtn");
-    const btnText = btn.querySelector(".btn-text");
-    const btnLoading = btn.querySelector(".btn-loading");
-  
-    form.addEventListener("submit", function() {
-      submitted = true;
-      // تعطيل الزرار + إظهار اللودينج
-      btn.disabled = true;
-      btnText.style.display = "none";
-      btnLoading.style.display = "inline-flex";
-  
-      setTimeout(() => {
-        if (submitted) {
-          form.reset();
-          btn.disabled = false;
-          btnText.style.display = "inline";
-          btnLoading.style.display = "none";
-          submitted = false;
-  
-          Swal.fire({
-            icon: 'success',
-            title: 'Thank you for your message!',
-            text: 'We will get back to you as soon as possible.',
-            background: 'black',
-            borderColor: '#2b2b2b',
-            color: 'white',
-            showConfirmButton: false,
-            timer: 3000
-          });
-        }
-      }, 1500);
-    });
-    // 
-    document.addEventListener("DOMContentLoaded", () => {
-  const heroImg = document.querySelector(".hero-bg");
-  const fullRes = heroImg.getAttribute("data-src");
-  const img = new Image();
-  img.src = fullRes;
-  img.onload = () => {
-    heroImg.src = fullRes;
-    heroImg.classList.add("loaded");
-  };
-});
-
-
-  </script>
-  
-  
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>    
+    <script defer src="js/main.js"></script>
   </body>
 </html>
